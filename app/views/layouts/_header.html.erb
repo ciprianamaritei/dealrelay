@@ -1,0 +1,70 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="span6 topDescr">
+                <!-- <h3>Tutonic uses advanced algorithms to match students and tutors.</h3>
+                <a href="#">Why else should I sign-up?</a> or <a href="#">sign up here.</a> -->
+                <nav class="navextra">
+                    <ul class="nav nav-tabs top-nav">
+                      <li class="active"><%= link_to "Home",    root_path %></li>
+                      <li><%= link_to "Help",    help_path %></li>
+                      <% if signed_in? %>
+                        <li><%= link_to "Users", users_path %></li>
+                        <li id="fat-menu" class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Account <b class="caret"></b>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li><%= link_to "Profile", current_user %></li>
+                            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+                          </ul>
+                        </li>
+                      <% else %>
+                        <li><!--<%= link_to "Sign in", signin_path %>-->
+                        <a data-toggle="modal" href="#loginModal">Sign in</a></li>
+                      <% end %>
+                    </ul>
+                  </nav>
+            </div>
+            <div class="span6 topLogin">
+                <% if signed_in? %>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Account <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Profile", current_user %></li>
+                    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                    <li class="divider"></li>
+                    <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+                  </ul>
+                <% else %>
+
+                <form class="form" >
+                  <fieldset>
+                    <div class="control-group">
+                      <label class="control-label" for="input01">E-mail:</label>
+                      <div class="controls">
+                        <input type="email" class="input-small" id="input01">
+                        <p><input type="checkbox" id="keepLogin"> Keep me logged in</p>
+                      </div>
+                    </div>
+                    <div class="control-group error">
+                      <label class="control-label" for="input02">Password</label>
+                      <div class="controls">
+                        <input type="password" class="input-small" id="input02">
+                      </div>
+                    </div>
+                    <div class="control-group signInBtn">
+                      <div class="controls">
+                        <button type="submit" class="btn">Sign in</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+                <% end %>
+           </div>
+        </div>
+    </div>
+</header>
