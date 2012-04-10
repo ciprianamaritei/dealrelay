@@ -1,4 +1,10 @@
 DealRelayApp::Application.routes.draw do
+  
+  # Home page
+  root to: 'static_pages#login'
+  match '/login' => 'static_pages#login'
+  match '/registration' => 'static_pages#registration'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
